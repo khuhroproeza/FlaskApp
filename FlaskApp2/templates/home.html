@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div align="center">
+    <h1>Results, All combined</h1>
+  </div>
+
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">     Classifiers</th>
+          <th scope="col">True Positive</th>
+          <th scope="col">True Negative</th>
+          <th scope="col">False Positive</th>
+          <th scope="col">False Negative</th>
+          <th scope="col">Detection Rate</th>
+          <th scope="col">False Alarm Rate</th>
+          <th scope="col">     Total Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {% for posts in posthome %}
+          <th scope="row">{{ posts.Name }}</th>
+          
+
+          <td>{{posts.True_Postive}}</td>
+          <td>{{posts.True_Negative}}</td>
+          <td>{{posts.False_Positive}}</td>
+          <td>{{posts.False_Negative}}</td>
+          <td>{{posts.Detection_Rate}} ± {{posts.SD_Detection_Rate}}</td>
+          <td>{{posts.False_Positive_Rate}} ± {{posts.SD_False_Alarm_rate}}</td>
+          <td>{{posts.Total_Time}}</td>
+          
+        </tr>
+        {% endfor %}
+        
+        
+      </tbody>
+    </table>
+    
+    
+
+{% endblock content %}
+© 2019 GitHub, Inc.

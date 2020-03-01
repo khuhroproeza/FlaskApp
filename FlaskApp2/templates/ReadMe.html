@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3>Getting Started</h3>
+
+<h1>Anomaly Detection ReadMe</h1>
+<p>Anomaly Detection Framework</p>
+
+<h4>Algorithms</h4>
+<ol type="1">
+  <li>AutoEncoder</li>
+  <li>LSTM Compressed AutoEncoder</li>
+  <li>One Class SVM</li>
+  <li>SVM</li>
+</ol>
+
+<h4>Datasets</h4>
+<ol type="1">
+  <li>Bohren</li>
+    <p>Drilling Dataset from IFW. Data recorded from two different types of run.
+       Normal run classified as 0, (drilling Process under normal conditions)
+       Abnormal run classified as 1 (drilling Process with Chatter occurance)</p>
+
+  <li>HPC Performance</li>
+    <p> Data tken from target system called "D.A.V.I.D.E", an energy efficient supercomputer developed by E4 Computer Engineering and
+    hosted by CINECA in Bologna, Italy. Data aggregated in 5-minutes long intervals. There are around 166
+metrics (our features), i.e. core loads, temperatures, fan speed, power consumptions, etc. Normal Run classified as 0. Forced Anomalies related to the
+    performance of the HPC classified as 1</p>
+  <li>HPC Powersave</li>
+    <p>Another branch of HPC dataset, where forced anomalies are focused on powersaving. Normal run classified as 0 and forced anomalies as 1</p>
+  <li>Conditioning</li>
+    <p>This dataset contains a timestamp and 25 signals of 8 different components. For example, L1 could be the current of a stepper motor and L2 the speed of that stepper motor.
+    this data shows the process of a whole production plant. The process was run till failure. Thus intial readings of
+        the dataset are classified as 0 and end failure classified as 1 (last 500 readings to be certain as per the author of the dataset).</p>
+  <li>TEP</li>
+    <p>The Tennessee Eastman process is a typical industrial process that consists of five main process units: a two-phase reactor where an exothermic reaction occurs,
+a separator, a stripper, a compressor, and a mixer. This is a nonlinear open-loop unstable process that has been used in many studies as a case study for
+plant-wide control, statistical process monitoring, sensor fault detection, and identification of data-driven network models.
+ 0 Classifies Normal 1 classifies Abnormal data</p>
+</ol>
+
+<h4>Running the Program</h4>
+<ol type="1">
+  <li>Editing Bash file named "exprun.sh"</li>
+  <li>Setting input argument to either Option=('Show')or Option=('Train')</li>
+  <li>Setting in number of Runs to perform</li>
+  <li>Running the bash file from the main folder directory; eg: "./exprun.sh" via terminal</li>
+</ol>
+
+<h4>Framework Setup</h4>
+<ol type="1">
+  <li>Framework</li>
+            <ol type="1">
+                  <li>Converters</li>
+                        <p>Contains Converter python file to divide data as per the requirement of the aloggorithm</p>
+                  <li>Datasets</li>
+                        <p>Contains all the datasets</p>
+                  <li>Measures</li>
+                        <p>Python functions to compute the measures used in the framework</p>
+                  <li>Model</li>
+                        <p>Contains all the algorithms used in the framework</p>
+                  <li>savedresult</li>
+                        <p>Contains all the saved results as pkl file saving, measures and names of dataset + algorithm</p>
+                  <li>static</li>
+                        <p>Contains CSS file for Flask Output Result html page</p>
+                  <li>Templates</li>
+                        <p>Contains all the html pages used in the framework</p>
+            </ol>
+  <li>Exprun.sh</li>
+    <p>Main Bash file to start the program</p>
+  <li>Flaskblog.py</li>
+    <p>Flask file to output and render all the pages</p>
+  <li>Main.py</li>
+    <p>Main file which files all the algorithms and saves the pickle files</p>
+  <li>Run.py</li>
+    <p>Run file which accepts arguements from the bash file to either run or show framework</p>
+  <li>SqlCreater</li>
+    <p>Functions to save result as SQL and to create different dictionaries for the use of flask page rendering</p>
+</ol>
+<h4>Packages Installed</h4>
+
+<ul style="list-style-type:disc;">
+  <li>absl-py==0.8.1</li>
+  <li>Click==7.0</li>
+  <li>converters==0.0.1</li>
+  <li>astor==0.8.0</li>
+  <li>cycler==0.10.0</li>
+  <li>Cython==0.29.14</li>
+  <li>Flask==1.1.1</li>
+  <li>gast==0.3.2</li>
+  <li>google-pasta==0.1.7</li>
+  <li>grpcio==1.24.3</li>
+  <li>h5py==2.10.0</li>
+  <li>itsdangerous==1.1.0</li>
+  <li>Jinja2==2.10.3</li>
+  <li>ajoblib==0.14.0</li>
+  <li>Keras==2.3.1</li>
+  <li>astor==0.8.0</li>
+  <li>astor==0.8.0</li>
+  <li>astor==0.8.0</li>
+  <li>astor==0.8.0</li>
+  <li>Keras-Applications==1.0.8</li>
+  <li>Keras-Preprocessing==1.1.0</li>
+  <li>kiwisolver==1.1.0</li>
+  <li>Markdown==3.1.1</li>
+  <li>MarkupSafe==1.1.1</li>
+  <li>matplotlib==3.1.1</li>
+  <li>mysql-connector-python==8.0.18</li>
+  <li>numpy==1.17.3</li>
+  <li>pandas==0.25.2</li>
+  <li>patsy==0.5.1</li>
+  <li>pkg-resources==0.0.0</li>
+  <li>property-cached==1.6.3</li>
+  <li>protobuf==3.10.0</li>
+  <li>pyparsing==2.4.2</li>
+  <li>python-dateutil==2.8.0</li>
+  <li>pytz==2019.3</li>
+  <li>PyYAML==5.1.2</li>
+  <li>scikit-learn==0.21.3</li>
+  <li>scipy==1.3.1</li>
+  <li>seaborn==0.9.0</li>
+  <li>six==1.12.0</li>
+  <li>statsmodels==0.10.1</li>
+  <li>tensorboard==1.14.0</li>
+  <li>tensorflow==1.14.0</li>
+  <li>tensorflow-estimator==1.14.0</li>
+  <li>termcolor==1.1.0</li>
+  <li>torch==1.3.1</li>
+  <li>Werkzeug==0.16.0</li>
+  <li>wrapt==1.11.2</li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content   %}
+
