@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col">
+            <h1>Upload File</h1>
+
+            <hr>
+            <form action="/upload-file" method="POST" enctype="multipart/form-data">
+                 <div class="form-group">
+                      <label>Select File</label>
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="csv" id="csv">
+                            <label class="custom-file-label" for="csv">Select File...</label>
+                          </div>
+        </div>
+                <button type="submit" class="btn btn-primary">Upload File</button>
+
+            </form>>
+            {% for posts in status%}
+                <th scope="row">{{ posts }}</th>
+                {% endfor %}
+            <li><h2>File Restrictions and Acceptability</h2></li>
+    <p>
+        <li> CSV extensions accepted only</li>
+        <li> Normal and Anomaly data combined</li>
+        <li> Labelled data with "Class" column stating normal and anomaly. 1 for Anomaly and 0 for Normal</li>
+        <li> File should be preprocessed (no missind values, numerical features only)</li>
+        <li> Results are auto refreshed after completion of training</li>
+    </p>
+        </div>
+
+    </div>
+</div>
+    
+
+{% endblock content %}
+© 2019 GitHub, Inc.
