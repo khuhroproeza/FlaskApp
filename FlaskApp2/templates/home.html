@@ -16,22 +16,27 @@
           <th scope="col">False Negative</th>
           <th scope="col">Detection Rate</th>
           <th scope="col">False Alarm Rate</th>
+            <th scope="col"> AUC</th>
           <th scope="col">     Total Time</th>
+
         </tr>
       </thead>
       <tbody>
         <tr>
-          {% for posts in posthome %}
-          <th scope="row">{{ posts.Name }}</th>
+          {% for keys in posthome.keys() %}
+
           
 
-          <td>{{posts.True_Postive}}</td>
-          <td>{{posts.True_Negative}}</td>
-          <td>{{posts.False_Positive}}</td>
-          <td>{{posts.False_Negative}}</td>
-          <td>{{posts.Detection_Rate}} ± {{posts.SD_Detection_Rate}}</td>
-          <td>{{posts.False_Positive_Rate}} ± {{posts.SD_False_Alarm_rate}}</td>
-          <td>{{posts.Total_Time}}</td>
+          <th scope="row">{{ posthome[keys]['Name']}}</th>
+             <td>{{posthome[keys]['True_Postive']}}</td>
+              <td>{{posthome[keys]['True_Negative']}}</td>
+              <td>{{posthome[keys]['False_Positive']}}</td>
+              <td>{{posthome[keys]['False_Negative']}}</td>
+              <td>{{posthome[keys]['Detection_Rate']}} ± {{posthome[keys]['SD_Detection_Rate']}}</td>
+              <td>{{posthome[keys]['False_Positive_Rate']}} ± {{posthome[keys]['SD_False_Alarm_rate']}}</td>
+                <td>{{posthome[keys]['AUC']}}</td>
+              <td>{{posthome[keys]['Total_Time']}}</td>
+
           
         </tr>
         {% endfor %}

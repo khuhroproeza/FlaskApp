@@ -1,6 +1,6 @@
 #1/usr/bin/env python3
-#from main import filedirect
-filedirect = '/home/master/FlaskApp2'
+from main import filedirect
+#filedirect = '/home/master/FlaskApp2'
 class showdata:
 
     def __init__(self):

@@ -1,0 +1,1 @@
+Drilling Dataset from IFW. Data recorded from two different types of run. Normal run classified as 0, (drilling Process under normal conditions) Abnormal run classified as 1 (drilling Process with Chatter occurance)

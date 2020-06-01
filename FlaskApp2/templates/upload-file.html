@@ -14,9 +14,16 @@
                           <div class="custom-file">
                             <input type="file" class="custom-file-input" name="csv" id="csv">
                             <label class="custom-file-label" for="csv">Select File...</label>
+                            <div class="form-group">
+
+                            <label for="textfield">Enter Description Here</label>
+                            <textarea class="form-control" id="textfield" name="textfield" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload File</button>
                           </div>
         </div>
-                <button type="submit" class="btn btn-primary">Upload File</button>
+
+
 
             </form>>
             {% for posts in status%}
@@ -32,9 +39,40 @@
     </p>
         </div>
 
-    </div>
+
+        </div>
 </div>
-    
+<div align="center">
+
+
+                        <h2>Status</h2>
+
+                        <table class="table table-bordered">
+
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">JOB ID</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Date Created</th>
+                                </tr>
+                              </thead>
+                              {% for keys,values in checker.items() %}
+
+                               <tr>
+                               <th scope="row">{{ keys}}</th>
+                               <td>{{values[0]}}</td>
+                               <td>{{values[1]}}</td>
+                               <td>{{values[2]}}</td>
+
+                               </tr>
+                               {%endfor%}
+                          <tbody>
+
+                          </tbody>
+                        </table>
+
+                </div>
 
 {% endblock content %}
 © 2019 GitHub, Inc.

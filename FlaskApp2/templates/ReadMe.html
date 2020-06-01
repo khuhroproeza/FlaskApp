@@ -14,31 +14,13 @@
   <li>One Class SVM</li>
   <li>SVM</li>
 </ol>
-
-<h4>Datasets</h4>
-<ol type="1">
-  <li>Bohren</li>
-    <p>Drilling Dataset from IFW. Data recorded from two different types of run.
-       Normal run classified as 0, (drilling Process under normal conditions)
-       Abnormal run classified as 1 (drilling Process with Chatter occurance)</p>
-
-  <li>HPC Performance</li>
-    <p> Data tken from target system called "D.A.V.I.D.E", an energy efficient supercomputer developed by E4 Computer Engineering and
-    hosted by CINECA in Bologna, Italy. Data aggregated in 5-minutes long intervals. There are around 166
-metrics (our features), i.e. core loads, temperatures, fan speed, power consumptions, etc. Normal Run classified as 0. Forced Anomalies related to the
-    performance of the HPC classified as 1</p>
-  <li>HPC Powersave</li>
-    <p>Another branch of HPC dataset, where forced anomalies are focused on powersaving. Normal run classified as 0 and forced anomalies as 1</p>
-  <li>Conditioning</li>
-    <p>This dataset contains a timestamp and 25 signals of 8 different components. For example, L1 could be the current of a stepper motor and L2 the speed of that stepper motor.
-    this data shows the process of a whole production plant. The process was run till failure. Thus intial readings of
-        the dataset are classified as 0 and end failure classified as 1 (last 500 readings to be certain as per the author of the dataset).</p>
-  <li>TEP</li>
-    <p>The Tennessee Eastman process is a typical industrial process that consists of five main process units: a two-phase reactor where an exothermic reaction occurs,
-a separator, a stripper, a compressor, and a mixer. This is a nonlinear open-loop unstable process that has been used in many studies as a case study for
-plant-wide control, statistical process monitoring, sensor fault detection, and identification of data-driven network models.
- 0 Classifies Normal 1 classifies Abnormal data</p>
-</ol>
+    <ol type="1">
+        <h4>Datasets</h4>
+            {% for key, values in  datadict.items()  %}
+                     <li>{{key}}</li>
+                    <p>{{values}}</p>
+            {%endfor%}
+    </ol>
 
 <h4>Running the Program</h4>
 <ol type="1">
